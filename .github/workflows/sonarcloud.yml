@@ -41,7 +41,7 @@ jobs:
       - name: Build and analyze
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"doolan-test" /d:sonar.cs.opencover.reportsPaths="D:\a\dolan-webapp\dolan-webapp\dolan-webapp-tests\TestResults\*\coverage.cobertura.xml" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"doolan-test" /d:sonar.cs.opencover.reportsPaths="D:\a\dolan-webapp\dolan-webapp\dolan-webapp-tests\TestResults\*\coverage.opencover.xml" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
           dotnet clean
           dotnet build
           dotnet test --collect "XPlat Code Coverage;Format=cobertura,opencover"
