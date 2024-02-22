@@ -9,4 +9,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.2" />
+  </ItemGroup>
 </Project>

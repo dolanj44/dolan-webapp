@@ -1,0 +1,6 @@
+﻿/Users/joedolan/projects/dolan-webapp/dolan-webapp-tests/UnitTest1.cs
+/Users/joedolan/projects/dolan-webapp/dolan-webapp-tests/Usings.cs
+/Users/joedolan/.nuget/packages/microsoft.net.test.sdk/17.9.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs
+/Users/joedolan/.nuget/packages/mstest.testadapter/3.2.1/build/net7.0/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/joedolan/.nuget/packages/mstest.testadapter/3.2.1/build/net7.0/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/joedolan/.nuget/packages/mstest.testadapter/3.2.1/build/net7.0/Microsoft.TestPlatform.AdapterUtilities.dll
