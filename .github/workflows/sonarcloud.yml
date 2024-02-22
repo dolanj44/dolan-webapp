@@ -44,5 +44,5 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"doolan-test" /d:sonar.coverageReportPaths="D:\a\dolan-webapp\dolan-webapp\dolan-webapp-tests\TestResults\*\coverage.cobertura.xml" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
           dotnet clean
           dotnet build
-          dotnet test --collect "XPlat Code Coverage"
+          dotnet test --collect "XPlat Code Coverage;Format=cobertura,opencover"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
