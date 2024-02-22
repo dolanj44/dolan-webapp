@@ -13,6 +13,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      
+    - name: Check Env
+      run:
+        echo ${{ github.workspace }}
+        echo $GITHUB_WORKSPACE
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -26,7 +31,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ${GITHUB_WORKSPACE}/coverage
+      run: dotnet test --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ${{ github.workspace }}/coverage
 
     - name: Display coverage
       uses: ewjoachim/coverage-comment-action@v1
@@ -34,7 +39,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     
         # Path and filename of the coverage XML file to analyze.
-        COVERAGE_FILE: ${GITHUB_WORKSPACE}/coverage/*/coverage.cobertura.xml
+        COVERAGE_FILE: ${{ github.workspace }}/coverage/*/coverage.cobertura.xml
     
         # Whether or not a badge will be generated and stored.
         BADGE_ENABLED: "true"
