@@ -34,7 +34,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     
         # Path and filename of the coverage XML file to analyze.
-        COVERAGE_FILE: coverage/**/coverage.cobertura.xml
+        COVERAGE_FILE: /home/runner/work/dolan-webapp/dolan-webapp/coverage/**/coverage.cobertura.xml
     
         # Whether or not a badge will be generated and stored.
         BADGE_ENABLED: "true"
