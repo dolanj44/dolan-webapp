@@ -18,8 +18,8 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      - name: dotnet test
+        run: dotnet test --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ${{ github.workspace }}/coverage
         
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2.2.0
@@ -29,6 +29,6 @@ jobs:
         with:
           projectBaseDir: app/src
           args: >
-            -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.python.coverage.reportPaths=${{ github.workspace }}/coverage/coverage.xml
             -Dsonar.tests=tests/
             -Dsonar.verbose=true
