@@ -1,4 +1,4 @@
-name: Build
+name: SonarQube
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Sonar Scan
     runs-on: windows-latest
     permissions: read-all
     steps:
