@@ -10,7 +10,7 @@ jobs:
   build:
     name: Sonar Scan
     runs-on: ubuntu-latest
-    permissions: read-all
+    permissions: write
     steps:
       - uses: actions/checkout@v2
         with:
