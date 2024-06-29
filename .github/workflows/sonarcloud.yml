@@ -32,4 +32,4 @@ jobs:
             -Dsonar.python.coverage.reportPaths=${{ github.workspace }}/coverage/*/coverage.cobertura.xml
             -Dsonar.tests=${{ github.workspace }}/dolan-webapp-tests
             -Dsonar.verbose=true
-            -Dsonar.projectKey=doolan-test
+            -Dsonar.projectKey=doolan-webapp
