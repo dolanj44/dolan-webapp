@@ -31,7 +31,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: deployment_zip
-        path: ./dolan-webapp/dolan-webapp/bin/Release/net7.0/deploy.zip
+        path: ${{ github.workspace }}/dolan-webapp/bin/Release/net7.0/deploy.zip
       
   deploy_to_dev:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
 
   deploy_to_preprod:
     runs-on: ubuntu-latest
-    needs: build
+    needs: deploy_to_dev
     environment: preprod
     steps:
     - name: Download a Deployment Zip
@@ -55,7 +55,7 @@ jobs:
 
   deploy_to_prod:
     runs-on: ubuntu-latest
-    needs: build
+    needs: deploy_to_preprod
     environment: prod
     steps:
     - name: Download a Deployment Zip
